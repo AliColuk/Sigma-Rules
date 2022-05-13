@@ -1,0 +1,24 @@
+title: DHCP Spoofing (Abnormal DHCP Server Usage)
+id: 2
+description: Rule detects abnormal DHCP Server usage. DHCP Servers needs to be identified in order to know normal operation.
+references:
+    - https://attack.mitre.org/techniques/T1557/003/
+tags:
+    - Adversary-in-the-Middle: DHCP Spoofing
+    - T1557.003
+status: stable
+author: Ali Coluk
+date: 2022/05/13
+modified: 2022/05/13
+logsource:
+    product: windows
+detection:
+    selection:
+        Event Name|contains:
+            - 'Client IP Lease Denied'
+            - 'Client IP Lease Renew'
+    condition: selection
+falsepositives:
+    - DHCP processes with known DHCP Servers.
+level: high
+
