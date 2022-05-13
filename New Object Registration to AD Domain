@@ -1,0 +1,23 @@
+title: New Object Registration to AD Domain
+id: 1
+description: Rule detects for the registration or joining of new device /policy/object/user/network address in Active Directory.
+references:
+    - https://attack.mitre.org/techniques/T1098/005/
+tags:
+    - Account Manipulation: Device Registration 
+    - T1098.005 
+status: stable
+author: Ali Coluk
+date: 2022/05/13
+modified: 2022/05/13
+logsource:
+    product: windows
+    definition: Eventid 5137 needs to be exist
+detection:
+    selection_obj:
+        Eventid|contains:
+            - '5137'
+    condition: selection_obj
+falsepositives:
+    - Legitimate object registration to AD Domain(ex:dnsNode)
+level: high
