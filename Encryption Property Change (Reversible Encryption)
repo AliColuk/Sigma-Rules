@@ -1,0 +1,25 @@
+title: Encryption Property Change (Reversible Encryption)
+id: 3
+description: Rule detects abuse of Active Directory authentication encryption properties to gain access to credentials on Windows systems.
+references:
+    - https://attack.mitre.org/techniques/T1556/005/
+tags:
+    - Modify Authentication Process: Reversible Encryption 
+    - T1556.005
+status: stable
+author: Ali Coluk
+date: 2022/05/13
+modified: 2022/05/13
+logsource:
+    product: windows
+detection:
+    selection1:
+        Process Name|contains:
+            - 'powershell'
+    selection2:
+        Process Commandline|contains:
+          - 'AllowReversiblePassword'
+    condition: selection1 and selection2
+falsepositives:
+    - Unknown
+level: high
