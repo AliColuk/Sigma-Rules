@@ -13,7 +13,7 @@ date: 2022/05/13
 modified: 2022/05/13
 logsource:
     product: windows
-    definition: Eventid 5137 needs to be exist
+    definition: Eventid 5137 needs to be logged.
 detection:
     selection_obj:
         Eventid|contains:
