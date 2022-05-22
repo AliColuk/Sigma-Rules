@@ -1,6 +1,7 @@
 title: DHCP Spoofing (Abnormal DHCP Server Usage)
 id: 2
-description: Rule detects abnormal DHCP Server usage. DHCP Servers needs to be identified in order to know normal operation.
+description: Sigma rule can be used to detect abnormal DHCP Server usage. DHCP Servers that are in use needs to be identified in order to know 
+the normal operation, then abnormal behaviors can be identified.
 references:
     - https://attack.mitre.org/techniques/T1557/003/
 tags:
@@ -20,5 +21,5 @@ detection:
     condition: selection
 falsepositives:
     - DHCP processes with known DHCP Servers.
-level: high
+level: medium
 
