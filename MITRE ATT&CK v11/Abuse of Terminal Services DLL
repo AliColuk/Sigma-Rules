@@ -1,0 +1,22 @@
+title: Abuse of Terminal Services DLL
+id: 4
+description: Monitor for changes to Registry keys associated with ServiceDll and other subkey values under HKLM\System\CurrentControlSet\services\TermService\Parameters\.
+references:
+    - https://attack.mitre.org/techniques/T1505/005/
+tags:
+    - Server Software Component: Terminal Services DLL 
+    - T1505.005 
+status: stable
+author: Ali Coluk
+date: 2022/05/22
+modified: 2022/05/22
+logsource:
+    product: windows
+detection:
+    selection:
+      Process Commandline|contains:           
+       - 'HKLM\System\CurrentControlSet\services\TermService\Parameters\'
+    condition: selection
+falsepositives:
+    - None
+level: high
