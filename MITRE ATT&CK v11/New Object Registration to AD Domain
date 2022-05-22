@@ -1,6 +1,7 @@
 title: New Object Registration to AD Domain
 id: 1
-description: Rule detects for the registration or joining of new device /policy/object/user/network address in Active Directory.
+description: Rule detects for the registration or joining of new device/policy/object/user/network to Active Directory domain. All new additions to the 
+domain which are not acknowledged by the administrator can be accepted as a suspicious event. 
 references:
     - https://attack.mitre.org/techniques/T1098/005/
 tags:
